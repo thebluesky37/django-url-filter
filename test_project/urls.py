@@ -3,7 +3,7 @@ from __future__ import print_function, unicode_literals
 
 import debug_toolbar
 from django.conf import settings
-from django.conf.urls import url
+from django.urls import path
 from django.urls import include
 from rest_framework.routers import DefaultRouter
 
@@ -76,4 +76,4 @@ urlpatterns = router.urls
 
 
 if settings.DEBUG:
-    urlpatterns += [url(r"^__debug__/", include(debug_toolbar.urls))]
+    urlpatterns += [path("__debug__/", include(debug_toolbar.urls))]
